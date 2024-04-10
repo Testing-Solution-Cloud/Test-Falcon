@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.84.3'
+project:
+    name: Test Falcon
+    package:
+        name: Test Falcon
+        api_version: '59.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Test Falcon/tests
+            options:
+                outputdir: robot/Test Falcon/results
+
+    robot_testdoc:
+        options:
+            path: robot/Test Falcon/tests
+            output: robot/Test Falcon/doc/Test Falcon_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
